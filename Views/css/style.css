@@ -1,0 +1,18 @@
+@import "variables.css";
+
+@import "components.css";
+
+@import "elements.css";
+
+@import "utilities.css";
+
+#header h1 * {
+    text-decoration: none;
+    color: white
+}
+
+#footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

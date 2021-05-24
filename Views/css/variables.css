@@ -1,0 +1,13 @@
+:root {
+    --color-primary: rgb(19, 141, 117);
+    --color-secondary: rgb(190, 190, 190);
+    --color-info: rgb(41, 128, 185);
+    --color-warning: rgb(255, 193, 7);
+    --color-danger: rgb(220, 53, 69);
+
+    --font-titles: 'Century Gothic';
+
+    --pad-x: 1.5rem;
+}
+
+* { box-sizing: border-box; }

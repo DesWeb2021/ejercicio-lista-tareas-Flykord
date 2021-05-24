@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Views/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>Lista Tareas</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        #logo {
+            text-align: right;
+            color: white;
+            font-size: 15em;
+        }
+
+        label {
+            color: white;
+        }
+    </style>
+</head>
+<body class="container-fluid bg-primary d-flex justify-content-center align-items-center">
+    <div class="w-50 row">
+        <div class="col-12 col-md-6" id="logo">
+            <i class="fas fa-clipboard-list"></i>
+        </div>
+        <div class="col-12 col-md-6">
+            <h1 class="text-white">Lista de Tareas</h1>
+
+            <form action="/lista_tareas/Views/Tareas/" id="form_login">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" class="form-control btn btn-primary" value="Entrar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var form = document.getElementById("form_login");
+
+        form.addEventListener("submit", login);
+
+        function login(e) {
+            //Validar usuario
+        }
+    </script>
+</body>
+</html>
