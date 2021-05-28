@@ -68,7 +68,7 @@
         function getTask(id) {
             var xhttp = new XMLHttpRequest();
 
-            xhttp.open("GET", "/lista_tareas/Controllers/tareasController.php?id=" + id, false);
+            xhttp.open("GET", "/ejercicio-lista-tareas-Flykord/Controllers/tareasController.php?id=" + id, false);
 
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -88,7 +88,7 @@
         }
 
         function goList() {
-            window.location.href = "/lista_tareas/Views/Tareas/";
+            window.location.href = "/ejercicio-lista-tareas-Flykord/Views/Tareas/";
         }
     </script>
 </body>

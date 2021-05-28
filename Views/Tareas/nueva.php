@@ -70,7 +70,7 @@
         }
 
         function goList() {
-            window.location.href = "/lista_tareas/Views/Tareas/";
+            window.location.href = "/ejercicio-lista-tareas-Flykord/Views/Tareas/";
         }
     </script>
 </body>

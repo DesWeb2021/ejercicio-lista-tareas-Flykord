@@ -29,7 +29,7 @@
                 <label for="check">Ver todas</label>
             </div>
             <div class="col-6 text-right">
-                <a href="/lista_tareas/Views/Tareas/nueva.php" class="btn btn-info">
+                <a href="/ejercicio-lista-tareas-Flykord/Views/Tareas/nueva.php" class="btn btn-info">
                     Agregar <i class="fas fa-plus"></i>
                 </a>
             </div>
@@ -133,7 +133,7 @@
         function getTaskList() {
             var xhttp = new XMLHttpRequest();
 
-            xhttp.open("GET", "/lista_tareas/Controllers/tareasController.php", false);
+            xhttp.open("GET", "/ejercicio-lista-tareas-Flykord/Controllers/tareasController.php", false);
 
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -151,7 +151,7 @@
         }
 
         function goEdit(id) {
-            window.location.href = "/lista_tareas/Views/Tareas/edit.php";
+            window.location.href = "/ejercicio-lista-tareas-Flykord/Views/Tareas/edit.php";
         }
 
         function deleteConfirm(id) {
