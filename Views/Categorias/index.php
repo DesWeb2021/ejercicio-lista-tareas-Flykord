@@ -80,7 +80,7 @@
     <script>
         const div_form = document.getElementById("form_section");
         const form = document.getElementById("category_form");
-
+        const input_category = document.getElementById("category_name");
         form.addEventListener("submit", saveCategory);
 
         getCategoryList();
@@ -103,6 +103,23 @@
             e.preventDefault();
             e.stopPropagation();
             //Guardar categoría
+            
+            var obj_category = {
+                nombre: input_category.value
+            }
+            
+            var xhttp = new XMLHttpRequest();
+
+        xhttp.open("POST", "/ejercicio-lista-tareas-Flykord/Controllers/categoriasController.php", false);
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            }
+
+        };
+            xhttp.setRequestHeader("Content-Type","aplication/json");
+            xhttp.send(JSON.stringify(obj_category));
 
             hideForm();
         }

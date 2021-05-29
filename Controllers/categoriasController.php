@@ -1,7 +1,7 @@
 <?php 
 
 require_once("../Models/db.php");
-require_once("../Models/Tarea.php");
+require_once("../Models/Categoria.php");
 
 try {
     $connection = DB::getConnection();
@@ -70,6 +70,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             exit();
         }
     }
+}
+else if($_SERVER["REQUEST_METHOD"] == "POST"){
+    var json_string = file_get_contents('php://input');
+    var json_obj = json_decode($json_string);
+
+    if($json_obj->nombre == null || $json_obj->nombre == ""){
+        exit();
+    }
+
+    $category = new Categoria(0,$json_obj->nombre);
 }
 
 ?>
