@@ -2,13 +2,17 @@
 
 require_once("../Models/db.php");
 require_once("../Models/Categoria.php");
+require_once("../Models/Response.php")
 
 try {
     $connection = DB::getConnection();
 }
 catch(PDOException $e) {
     error_log("Connection error - " . $e, 0);
-
+    $response = new Response();
+    $response->setHttpStatusCode(500);
+    $response->addMessage("Error de conexion a la BD");
+    $response->send();
     exit();
 }
 
@@ -80,6 +84,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     $category = new Categoria(0,$json_obj->nombre);
+    var_dump($category);
 }
 
 ?>
