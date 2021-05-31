@@ -76,15 +76,25 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 }
 else if($_SERVER["REQUEST_METHOD"] == "POST"){
-    var json_string = file_get_contents('php://input');
-    var json_obj = json_decode($json_string);
+    echo "Entrando al post";
+    $json_string = file_get_contents('php://input');
+    $json_obj = json_decode($json_string);
 
     if($json_obj->nombre == null || $json_obj->nombre == ""){
+        $response = new Response();
+        $response->setHttpStatusCode(400);
+        $response->addMessage("El nombre no puede ser null o estar vacio");
+        $response->send();
         exit();
     }
 
     $category = new Categoria(0,$json_obj->nombre);
-    var_dump($category);
+    //var_dump($category);
+    try{
+
+    }catch(PDOException $e){
+
+    }
 }
 
 ?>

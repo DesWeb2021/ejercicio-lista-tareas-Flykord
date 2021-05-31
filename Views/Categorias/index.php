@@ -103,22 +103,31 @@
             e.preventDefault();
             e.stopPropagation();
             //Guardar categoría
-            
+          
             var obj_category = {
                 nombre: input_category.value
-            }
+            };
             
             var xhttp = new XMLHttpRequest();
 
         xhttp.open("POST", "/ejercicio-lista-tareas-Flykord/Controllers/categoriasController.php", false);
 
         xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
+            if (this.readyState == 4) 
+             {
+                 var response = JSON.parse(this.responseText);
+                 if(this.status == 200){
+                    console.log(this.responseText);
+                 }else if(this.status == 500){
+                    alert(response.messages[0]);
+                 }else if(this.status == 400){
+                    alert(response.messages[0]);
+                 }
+            
             }
 
         };
-            xhttp.setRequestHeader("Content-Type","aplication/json");
+            xhttp.setRequestHeader("Content-Type","application/json");
             xhttp.send(JSON.stringify(obj_category));
 
             hideForm();
