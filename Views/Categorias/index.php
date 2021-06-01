@@ -107,7 +107,7 @@
             var obj_category = {
                 nombre: input_category.value
             };
-            
+            console.log(obj_category);
             var xhttp = new XMLHttpRequest();
 
         xhttp.open("POST", "/ejercicio-lista-tareas-Flykord/Controllers/categoriasController.php", false);
@@ -117,9 +117,11 @@
              {
                  var response = JSON.parse(this.responseText);
                  if(this.status == 200){
-                    console.log(this.responseText);
+                   console.log(this.responseText);
+                  // var json = JSON.parse(this.responseText);
+                  // console.log(json);
                  }else if(this.status == 500){
-                    alert(response.messages[0]);
+                   alert(response.messages[0]);
                  }else if(this.status == 400){
                     alert(response.messages[0]);
                  }

@@ -4,16 +4,16 @@
       private $_messages = array();
       private $_data;
 
-      public function setHttpStatusCode($_httpStatusCode){
-        this->_httpStatusCode = $_httpStatusCode;
+      public function setHttpStatusCode($httpStatusCode){
+        this->_httpStatusCode = $httpStatusCode;
       }
 
-      public function addMessage($_message){
-          $this->messages[] = $_message;
+      public function addMessage($message){
+          $this->_messages[] = $message;
       }
 
-      public function setData($_data){
-          $this->_data = 
+      public function setData($data){
+         $this->_data = $data ;
       }
 
       public function send(){
@@ -21,8 +21,8 @@
 
         http_response_code($this->setHttpStatusCode);
         $response = array();
-        $response["messages"] = $this->messages;
-        $response["data"] = $this->data;
+        $response["messages"] = $this->_messages;
+        $response["data"] = $this->_data;
 
         echo json_encode($response);
       }

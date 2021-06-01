@@ -2,7 +2,7 @@
 
 require_once("../Models/db.php");
 require_once("../Models/Categoria.php");
-require_once("../Models/Response.php")
+require_once("../Models/Response.php");
 
 try {
     $connection = DB::getConnection();
@@ -91,7 +91,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST"){
     $category = new Categoria(0,$json_obj->nombre);
     //var_dump($category);
     try{
-
+        
     }catch(PDOException $e){
 
     }
